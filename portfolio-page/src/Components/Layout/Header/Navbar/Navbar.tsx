@@ -12,7 +12,7 @@ const Navbar = () => {
           <a href="#">About</a>
         </li>
         <li className="nav-link">
-          <a href="#">Tech Stack</a>
+          <a href="#techstack">Tech Stack</a>
         </li>
         <li className="nav-link">
           <a href="#">Projects</a>
