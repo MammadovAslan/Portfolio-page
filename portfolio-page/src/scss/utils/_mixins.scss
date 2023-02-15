@@ -1,0 +1,27 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin easeTransition($duration) {
+  transition: $duration ease;
+}
+
+@mixin for-desktop-landscape {
+  @media (min-width: 988px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape {
+  @media (max-width: 850px) {
+    @content;
+  }
+}
+
+@mixin for-mobile-landscape {
+  @media (max-width: 568px) {
+    @content;
+  }
+}
