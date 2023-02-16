@@ -1,28 +1,12 @@
 import StackItem from "./StackItem/StackItem";
-import { useState, useEffect } from "react";
-import { StackTechI } from "./StackList/StackList";
-import { stackList } from "./StackList/StackList";
-import useWindowDimensions from "../../../Hooks/useWindowDimensions";
+import { StackTechI } from "./stackList/stackList";
+import { stackList } from "./stackList/stackList";
+import { ShowSectionI } from "../../../types";
 
-const TechStack = () => {
-  const { height } = useWindowDimensions();
-  const [showTechStack, setShowTechStack] = useState(height > 800);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        setShowTechStack(true);
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    height > 800 && setShowTechStack(true);
-  }, [height]);
-
+const TechStack = ({ show }: ShowSectionI) => {
   return (
     <div className="techstack" id="techstack">
-      {showTechStack && (
+      {show && (
         <>
           <div className="techstack-title">
             <h1>My Tech Stack</h1>

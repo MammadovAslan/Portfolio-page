@@ -37,6 +37,13 @@ export const stackList: StackTechI[] = [
   },
   {
     id: uuidv4(),
+    alt: "react",
+    image:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
+    link: "https://reactjs.org/",
+  },
+  {
+    id: uuidv4(),
     alt: "bootstrap",
     image:
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg",
@@ -47,13 +54,6 @@ export const stackList: StackTechI[] = [
     alt: "tailwind",
     image: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
     link: "https://tailwindcss.com/",
-  },
-  {
-    id: uuidv4(),
-    alt: "react",
-    image:
-      "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
-    link: "https://reactjs.org/",
   },
   {
     id: uuidv4(),

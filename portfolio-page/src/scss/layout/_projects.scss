@@ -1,0 +1,89 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.projects {
+  .projects-title {
+    animation-delay: 0.1s;
+  }
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    .project {
+      width: 200px;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px;
+      animation: title-loading 0.4s 0.3s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+      //   cursor: pointer;
+      &:hover {
+        &:nth-child(odd) {
+          box-shadow: #00c0fd 0px 0px 15px;
+        }
+        &:nth-child(even) {
+          box-shadow: #e70faa 0px 0px 15px;
+        }
+      }
+      @include easeTransition(0.2s);
+      .image-container {
+        min-height: 40%;
+        img {
+          max-width: 100%;
+          height: 100%;
+          border-radius: 12px;
+        }
+      }
+      .project-summary {
+        padding: 18px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        .project-info {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          .project-description,
+          .project-stack {
+            font-size: 14px;
+          }
+          .project-description {
+            height: 80px;
+            overflow: scroll;
+            color: $content-lightmode;
+            &::-webkit-scrollbar {
+              display: none;
+            }
+
+            & {
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+            }
+          }
+          .project-stack {
+            span {
+              font-size: 16px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      .links-container {
+        display: flex;
+        justify-content: space-between;
+        .codelink {
+          color: #111;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 14px;
+          @include easeTransition(0.2s);
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+}

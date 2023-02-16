@@ -1,4 +1,4 @@
-import { StackTechI } from "../StackList/StackList";
+import { StackTechI } from "../stackList/stackList";
 
 const StackItem = ({ alt, image, link }: StackTechI) => {
   return (

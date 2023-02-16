@@ -19,6 +19,49 @@ html {
   scroll-behavior: smooth;
 }
 
+.techstack-title,
+.projects-title {
+  text-align: center;
+  margin-bottom: 140px;
+  opacity: 0;
+  animation: title-loading 0.5s;
+  animation-fill-mode: forwards;
+}
+.techstack-title h3,
+.projects-title h3 {
+  font-weight: 400;
+  color: #666666;
+}
+@media (max-width: 850px) {
+  .techstack-title,
+  .projects-title {
+    margin-bottom: 80px;
+  }
+}
+
+@keyframes title-loading {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, rgb(231, 15, 170) 0%, rgb(0, 192, 253) 100%);
+  border-radius: 8px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -357,20 +400,7 @@ html {
   margin: 150px 0;
 }
 .techstack .techstack-title {
-  text-align: center;
-  margin-bottom: 140px;
-  opacity: 0;
-  animation: title-loading 0.5s;
-  animation-fill-mode: forwards;
-}
-.techstack .techstack-title h3 {
-  font-weight: 400;
-  color: #666666;
-}
-@media (max-width: 850px) {
-  .techstack .techstack-title {
-    margin-bottom: 80px;
-  }
+  animation-delay: 0.1s;
 }
 .techstack .stacks-container {
   display: grid;
@@ -416,16 +446,6 @@ html {
   animation-delay: 1.3s;
 }
 
-@keyframes title-loading {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 @keyframes stack-item-load {
   0% {
     opacity: 0;
@@ -439,4 +459,82 @@ html {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.projects .projects-title {
+  animation-delay: 0.1s;
+}
+.projects .projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+.projects .projects-container .project {
+  width: 200px;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px;
+  animation: title-loading 0.4s 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  transition: 0.2s ease;
+}
+.projects .projects-container .project:hover:nth-child(odd) {
+  box-shadow: #00c0fd 0px 0px 15px;
+}
+.projects .projects-container .project:hover:nth-child(even) {
+  box-shadow: #e70faa 0px 0px 15px;
+}
+.projects .projects-container .project .image-container {
+  min-height: 40%;
+}
+.projects .projects-container .project .image-container img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+.projects .projects-container .project .project-summary {
+  padding: 18px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.projects .projects-container .project .project-summary .project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.projects .projects-container .project .project-summary .project-info .project-description,
+.projects .projects-container .project .project-summary .project-info .project-stack {
+  font-size: 14px;
+}
+.projects .projects-container .project .project-summary .project-info .project-description {
+  height: 80px;
+  overflow: scroll;
+  color: #666666;
+}
+.projects .projects-container .project .project-summary .project-info .project-description::-webkit-scrollbar {
+  display: none;
+}
+.projects .projects-container .project .project-summary .project-info .project-description {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.projects .projects-container .project .project-summary .project-info .project-stack span {
+  font-size: 16px;
+  font-weight: 600;
+}
+.projects .projects-container .project .links-container {
+  display: flex;
+  justify-content: space-between;
+}
+.projects .projects-container .project .links-container .codelink {
+  color: #111;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+.projects .projects-container .project .links-container .codelink:hover {
+  opacity: 0.6;
 }
