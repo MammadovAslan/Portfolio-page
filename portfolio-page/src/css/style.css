@@ -6,6 +6,9 @@
   text-decoration: none;
 }
 
+.wrapper {
+  min-height: 500vh;
+}
 @media (max-width: 850px) {
   .wrapper {
     flex-direction: column;
@@ -357,7 +360,7 @@ html {
   text-align: center;
   margin-bottom: 140px;
   opacity: 0;
-  animation: title-loading 0.5s 1s;
+  animation: title-loading 0.5s;
   animation-fill-mode: forwards;
 }
 .techstack .techstack-title h3 {
@@ -381,36 +384,36 @@ html {
   }
 }
 .techstack .stacks-container .stack-item {
-  animation: stack-item-load 0.4s 1.4s;
+  animation: stack-item-load 0.4s 0.4s;
   opacity: 0;
   animation-fill-mode: forwards;
 }
 .techstack .stacks-container .stack-item:nth-child(2) {
-  animation-delay: 1.5s;
+  animation-delay: 0.5s;
 }
 .techstack .stacks-container .stack-item:nth-child(3) {
-  animation-delay: 1.6s;
+  animation-delay: 0.6s;
 }
 .techstack .stacks-container .stack-item:nth-child(4) {
-  animation-delay: 1.7s;
+  animation-delay: 0.7s;
 }
 .techstack .stacks-container .stack-item:nth-child(5) {
-  animation-delay: 1.8s;
+  animation-delay: 0.8s;
 }
 .techstack .stacks-container .stack-item:nth-child(6) {
-  animation-delay: 1.9s;
+  animation-delay: 0.9s;
 }
 .techstack .stacks-container .stack-item:nth-child(7) {
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 .techstack .stacks-container .stack-item:nth-child(8) {
-  animation-delay: 2.1s;
+  animation-delay: 1.1s;
 }
 .techstack .stacks-container .stack-item:nth-child(9) {
-  animation-delay: 2.2s;
+  animation-delay: 1.2s;
 }
 .techstack .stacks-container .stack-item:nth-child(10) {
-  animation-delay: 2.3s;
+  animation-delay: 1.3s;
 }
 
 @keyframes title-loading {

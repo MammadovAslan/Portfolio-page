@@ -19,7 +19,7 @@ export const stackList: StackTechI[] = [
     alt: "html5",
     image:
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
-    link: "https://www.w3.org/html/",
+    link: "https://html.spec.whatwg.org/multipage/",
   },
   {
     id: uuidv4(),

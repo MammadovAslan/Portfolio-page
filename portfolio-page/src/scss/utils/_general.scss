@@ -7,6 +7,7 @@
 }
 
 .wrapper {
+  min-height: 500vh;
   @include for-tablet-landscape {
     flex-direction: column;
   }
