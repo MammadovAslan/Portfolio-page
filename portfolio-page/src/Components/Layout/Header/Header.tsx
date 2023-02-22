@@ -21,7 +21,7 @@ const Header = () => {
       let scrollTop = window.pageYOffset;
       if (scrollTop > lastScrollTop) {
         setTop("-104px");
-      } else {
+      } else if(lastScrollTop > scrollTop+10) {
         setTop("-0");
       }
       lastScrollTop = scrollTop;
