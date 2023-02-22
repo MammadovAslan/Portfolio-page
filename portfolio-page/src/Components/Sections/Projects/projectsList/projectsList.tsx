@@ -12,7 +12,7 @@ import { v4 as uuidv4 } from "uuid";
 export const projectsList: ProjectI[] = [
   {
     techstack: "React, TypeSctipt, Redux, SCSS",
-    image: "src/assets/projects_images/ecommerce.jpg",
+    image: "assets/projects_images/ecommerce.jpg",
     title: "E-commerce store",
     description: "E-commerce project on commerce.js with React+TypeScript",
     codelink: "https://github.com/MammadovAslan/E-commerce-project",
@@ -21,7 +21,7 @@ export const projectsList: ProjectI[] = [
   },
   {
     techstack: "React, SCSS, JavaScript",
-    image: "src/assets/projects_images/musicplayer.jpg",
+    image: "assets/projects_images/musicplayer.jpg",
     title: "Music player ",
     description: "Music player with React",
     codelink: "https://github.com/MammadovAslan/React-media-player",
