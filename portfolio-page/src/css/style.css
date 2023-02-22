@@ -465,7 +465,9 @@ html {
 }
 .projects .projects-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  padding: 48px;
+  gap: 48px;
   place-items: center;
 }
 .projects .projects-container .project {
@@ -476,6 +478,7 @@ html {
   animation: title-loading 0.4s 0.3s;
   opacity: 0;
   animation-fill-mode: forwards;
+  cursor: pointer;
   transition: 0.2s ease;
 }
 .projects .projects-container .project:hover:nth-child(odd) {
@@ -490,7 +493,7 @@ html {
 .projects .projects-container .project .image-container img {
   max-width: 100%;
   height: 100%;
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
 }
 .projects .projects-container .project .project-summary {
   padding: 18px 28px;
@@ -518,6 +521,9 @@ html {
 .projects .projects-container .project .project-summary .project-info .project-description {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+.projects .projects-container .project .project-summary .project-info .project-stack {
+  min-height: 46px;
 }
 .projects .projects-container .project .project-summary .project-info .project-stack span {
   font-size: 16px;
