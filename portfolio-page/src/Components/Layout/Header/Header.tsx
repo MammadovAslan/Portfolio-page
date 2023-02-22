@@ -1,8 +1,10 @@
 import Navbar from "./Navbar/Navbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
+  const [top, setTop] = useState("");
 
   const closeSidebar = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.target as Element;
@@ -12,8 +14,26 @@ const Header = () => {
     }
   };
 
+  let lastScrollTop = 0;
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      let scrollTop = window.pageYOffset;
+      if (scrollTop > lastScrollTop) {
+        setTop("-104px");
+      } else {
+        setTop("-0");
+      }
+      lastScrollTop = scrollTop;
+    });
+  }, []);
+
+  const style = {
+    top: top,
+  };
+
   return (
-    <header className="header" onClick={closeSidebar}>
+    <header className="header" onClick={closeSidebar} style={style}>
       <div className="header-name">
         &#123;{" "}
         <p className="fullname">

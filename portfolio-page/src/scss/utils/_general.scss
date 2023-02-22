@@ -20,7 +20,7 @@ html {
 .techstack-title,
 .projects-title {
   text-align: center;
-  margin-bottom: 140px;
+  margin-bottom: 80px;
   opacity: 0;
   animation: title-loading 0.5s;
   animation-fill-mode: forwards;
@@ -30,6 +30,12 @@ html {
   }
   @include for-tablet-landscape {
     margin-bottom: 80px;
+  }
+}
+
+.main {
+  @include for-tablet-landscape {
+    padding-top: 70px;
   }
 }
 

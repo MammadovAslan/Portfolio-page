@@ -5,7 +5,7 @@ import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import { useState, useEffect } from "react";
 
 const MainContainer = () => {
-  const { height } = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
   const [showTechStack, setShowTechStack] = useState(height > 800);
   const [showProjects, setShowProjects] = useState(height > 1300);
 
@@ -13,14 +13,16 @@ const MainContainer = () => {
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300 && window.pageYOffset < 600) {
         setShowTechStack(true);
-      } else if (window.pageYOffset > 600) {
+      } else if (window.pageYOffset > 600 && width > 800) {
+        setShowProjects(true);
+      } else if (window.pageYOffset > 800 && width < 800) {
         setShowProjects(true);
       }
     });
   }, []);
 
   return (
-    <div>
+    <div className="main">
       <Hero />
       <TechStack show={showTechStack} />
       <Projects show={showProjects} />
