@@ -1,9 +1,11 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
+
 const Navbar = () => {
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar `}>
       <ul className="nav-links">
         <li className="nav-link">
           <a href="#">Home</a>

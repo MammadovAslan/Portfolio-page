@@ -1,6 +1,6 @@
 import Navbar from "./Navbar/Navbar";
 import { useState, useEffect } from "react";
-import useWindowDimensions from "../../../Hooks/useWindowDimensions";
+import HeaderMenu from "./HeaderMenu/HeaderMenu";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -20,8 +20,9 @@ const Header = () => {
     window.addEventListener("scroll", () => {
       let scrollTop = window.pageYOffset;
       if (scrollTop > lastScrollTop) {
-        setTop("-104px");
-      } else if(lastScrollTop > scrollTop+10) {
+        setTop("-82px");
+        setSidebar(false);
+      } else if (lastScrollTop > scrollTop + 10) {
         setTop("-0");
       }
       lastScrollTop = scrollTop;
@@ -42,21 +43,7 @@ const Header = () => {
         &#125;
       </div>
       <Navbar />
-      <div className="header-menu">
-        <input
-          id="menu__toggle"
-          type="checkbox"
-          checked={sidebar}
-          onChange={(e) => setSidebar(e.target.checked)}
-        />
-        <label className="menu__btn" htmlFor="menu__toggle">
-          <span></span>
-        </label>
-        <div className="menu-box">
-          {/* Navbar mobile*/}
-          <Navbar />
-        </div>
-      </div>
+      <HeaderMenu setSidebar={setSidebar} sidebar={sidebar} />
     </header>
   );
 };
