@@ -28,10 +28,11 @@ const Header = () => {
         } else if (lastScrollTop > scrollTop + 10) {
           setTop("-0");
         }
+        lastScrollTop = scrollTop;
       }
-      lastScrollTop = scrollTop;
     });
   }, []);
+
 
   const style = {
     top: top,
