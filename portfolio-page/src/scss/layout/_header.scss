@@ -8,12 +8,12 @@
   padding: 24px 100px;
   border-bottom: 1px solid #cdc9c9;
   @include easeTransition(0.3s);
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #fff;
   @include for-tablet-landscape {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background-color: #fff;
     padding: 9px 20px;
   }
   .header-name {

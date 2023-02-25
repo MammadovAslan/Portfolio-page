@@ -34,6 +34,7 @@ html {
 }
 
 .main {
+  padding-top: 100px;
   @include for-tablet-landscape {
     padding-top: 70px;
   }

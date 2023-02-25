@@ -15,7 +15,7 @@ const MainContainer = () => {
         setShowTechStack(true);
       } else if (window.pageYOffset > 600 && width > 800) {
         setShowProjects(true);
-      } else if (window.pageYOffset > 900 && width < 800) {
+      } else if (window.pageYOffset > 1100 && width < 800) {
         setShowProjects(true);
       }
     });

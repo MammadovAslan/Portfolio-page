@@ -1,10 +1,12 @@
 import Navbar from "./Navbar/Navbar";
 import { useState, useEffect } from "react";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
+import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   const [top, setTop] = useState("");
+  const { width } = useWindowDimensions();
 
   const closeSidebar = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.target as Element;
@@ -19,11 +21,13 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       let scrollTop = window.pageYOffset;
-      if (scrollTop > lastScrollTop) {
-        setTop("-82px");
-        setSidebar(false);
-      } else if (lastScrollTop > scrollTop + 10) {
-        setTop("-0");
+      if (width >= 568) {
+        if (scrollTop > lastScrollTop) {
+          setTop("-112px");
+          setSidebar(false);
+        } else if (lastScrollTop > scrollTop + 10) {
+          setTop("-0");
+        }
       }
       lastScrollTop = scrollTop;
     });
