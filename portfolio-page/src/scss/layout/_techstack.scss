@@ -18,6 +18,9 @@
       animation: stack-item-load 0.4s 0.4s;
       opacity: 0;
       animation-fill-mode: forwards;
+      color: $content-lightmode;
+      text-align: center;
+      text-transform: capitalize;
       &:nth-child(2) {
         animation-delay: 0.5s;
       }
@@ -44,6 +47,21 @@
       }
       &:nth-child(10) {
         animation-delay: 1.3s;
+      }
+      &:nth-child(11) {
+        animation-delay: 1.4s;
+      }
+      &:nth-child(12) {
+        animation-delay: 1.5s;
+      }
+      &:nth-child(13) {
+        animation-delay: 1.6s;
+      }
+      &:nth-child(14) {
+        animation-delay: 1.7s;
+      }
+      &:nth-child(15) {
+        animation-delay: 1.8s;
       }
     }
   }

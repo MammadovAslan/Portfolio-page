@@ -22,6 +22,7 @@ html {
 .techstack-title,
 .projects-title {
   text-align: center;
+  position: relative;
   margin-bottom: 80px;
   opacity: 0;
   animation: title-loading 0.5s;
@@ -59,12 +60,12 @@ html {
   }
 }
 ::-webkit-scrollbar {
-  display: none;
   width: 5px;
 }
 
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -77,7 +78,7 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 24px 100px;
-  border-bottom: 1px solid #cdc9c9;
+  border-bottom: 1px solid rgba(242, 238, 238, 0.808);
   transition: 0.3s ease;
   position: fixed;
   left: 0;
@@ -263,6 +264,47 @@ html {
   transition: 1s ease;
   animation: typing 1.2s infinite;
 }
+.hero-section .context .hero-buttons {
+  display: flex;
+  padding-top: 24px;
+  gap: 24px;
+}
+.hero-section .context .hero-buttons .hero-button {
+  color: purple;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid purple;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+  scale: 0;
+  animation: buttons-load 0.6s ease 0.6s;
+  animation-fill-mode: forwards;
+}
+.hero-section .context .hero-buttons .hero-button:hover {
+  color: white;
+}
+.hero-section .context .hero-buttons .hero-button::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background: linear-gradient(270deg, rgb(231, 15, 170) 0%, rgb(0, 192, 253) 100%);
+  z-index: -1;
+  transition: all 1s;
+}
+.hero-section .context .hero-buttons .hero-button:hover::before {
+  width: 160%;
+}
 .hero-section .image-container {
   width: 280px;
   height: 280px;
@@ -281,6 +323,14 @@ html {
   width: 97%;
 }
 
+@keyframes buttons-load {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
 @keyframes description-loader {
   0% {
     opacity: 0;
@@ -334,6 +384,9 @@ html {
   animation: stack-item-load 0.4s 0.4s;
   opacity: 0;
   animation-fill-mode: forwards;
+  color: #666666;
+  text-align: center;
+  text-transform: capitalize;
 }
 .techstack .stacks-container .stack-item:nth-child(2) {
   animation-delay: 0.5s;
@@ -361,6 +414,21 @@ html {
 }
 .techstack .stacks-container .stack-item:nth-child(10) {
   animation-delay: 1.3s;
+}
+.techstack .stacks-container .stack-item:nth-child(11) {
+  animation-delay: 1.4s;
+}
+.techstack .stacks-container .stack-item:nth-child(12) {
+  animation-delay: 1.5s;
+}
+.techstack .stacks-container .stack-item:nth-child(13) {
+  animation-delay: 1.6s;
+}
+.techstack .stacks-container .stack-item:nth-child(14) {
+  animation-delay: 1.7s;
+}
+.techstack .stacks-container .stack-item:nth-child(15) {
+  animation-delay: 1.8s;
 }
 
 @keyframes stack-item-load {
@@ -392,6 +460,12 @@ html {
     padding: 0;
   }
 }
+.projects .projects-container div:hover:nth-child(odd) .project {
+  box-shadow: #00c0fd 0px 0px 15px;
+}
+.projects .projects-container div:hover:nth-child(even) .project {
+  box-shadow: #e70faa 0px 0px 15px;
+}
 .projects .projects-container .project {
   max-width: 300px;
   border-radius: 12px;
@@ -401,12 +475,6 @@ html {
   animation-fill-mode: forwards;
   cursor: pointer;
   transition: 0.2s ease;
-}
-.projects .projects-container .project:hover:nth-child(odd) {
-  box-shadow: #00c0fd 0px 0px 15px;
-}
-.projects .projects-container .project:hover:nth-child(even) {
-  box-shadow: #e70faa 0px 0px 15px;
 }
 .projects .projects-container .project .image-container {
   min-height: 40%;

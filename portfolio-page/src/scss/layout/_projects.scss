@@ -8,12 +8,22 @@
   .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-    padding:0 48px;
+    padding: 0 48px;
     @include for-mobile-landscape {
       padding: 0;
     }
     gap: 48px;
     place-items: center;
+    div {
+      &:hover {
+        &:nth-child(odd) .project {
+          box-shadow: #00c0fd 0px 0px 15px;
+        }
+        &:nth-child(even) .project {
+          box-shadow: #e70faa 0px 0px 15px;
+        }
+      }
+    }
     .project {
       max-width: 300px;
       border-radius: 12px;
@@ -22,14 +32,7 @@
       opacity: 0;
       animation-fill-mode: forwards;
       cursor: pointer;
-      &:hover {
-        &:nth-child(odd) {
-          box-shadow: #00c0fd 0px 0px 15px;
-        }
-        &:nth-child(even) {
-          box-shadow: #e70faa 0px 0px 15px;
-        }
-      }
+
       @include easeTransition(0.2s);
       .image-container {
         min-height: 40%;

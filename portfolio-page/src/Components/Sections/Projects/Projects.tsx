@@ -2,16 +2,14 @@ import Project from "./Project/Project";
 import { projectsList } from "./projectsList/projectsList";
 import { ProjectI } from "./projectsList/projectsList";
 import { ShowSectionI } from "../../../types";
+import Title from "../../Title/Title";
 
 const Projects = ({ show }: ShowSectionI) => {
   return (
-    <div className="projects" id='projects'>
+    <div className="projects" id="projects">
       {show && (
         <>
-          <div className="projects-title">
-            <h1>Projects</h1>
-            <h3> Things I’ve built so far</h3>
-          </div>
+          <Title className="projects-title" title="Projects" context="Things I’ve built so far" />
           <div className="projects-container">
             {projectsList.map((el: ProjectI) => (
               <Project

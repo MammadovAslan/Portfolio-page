@@ -1,6 +1,18 @@
 import Typewriter from "typewriter-effect";
 
 const Hero = () => {
+  const onButtonClick = () => {
+    fetch("mammadov_aslan_cv.pdf").then((response) => {
+      response.blob().then((blob) => {
+        const fileURL = window.URL.createObjectURL(blob);
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "mammadov_aslan_cv.pdf";
+        alink.click();
+      });
+    });
+  };
+
   return (
     <section className="hero-section">
       <div className="context">
@@ -24,6 +36,12 @@ const Hero = () => {
                 .start();
             }}
           />
+        </div>
+        <div className="hero-buttons">
+          <button className="hero-button">Contact me</button>
+          <button className="hero-button" onClick={onButtonClick}>
+            Download CV
+          </button>
         </div>
       </div>
       <div className="image-container">
