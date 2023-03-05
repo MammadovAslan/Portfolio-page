@@ -76,6 +76,9 @@
         scale: 0;
         animation: buttons-load 0.6s ease 0.6s;
         animation-fill-mode: forwards;
+        @include for-mobile-landscape {
+          font-size: 14px;
+        }
         &:hover {
           color: white;
         }
